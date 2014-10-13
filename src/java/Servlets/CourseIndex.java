@@ -54,26 +54,26 @@ public class CourseIndex extends HttpServlet {
             out.println("       <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">");
             out.println("       <link rel=\"stylesheet\" type=\"text/css\" href=\"Blue.css\">");
             out.println("   </head>");
-            out.println("<body>");
-            out.println("<center>");
-            out.println("   <div id=\"Container\">");
-            out.println("       <img class=\"main_logo\" src=\"/LumenTouchProject/lumen_touch_logo.png\" alt=\"Logo\">");
-            out.println("       <div id=\"main_conatiner\">");
-            out.println("       <table style=\"width:95%;\" cellpadding=\"0\" cellspacing=\"0\">");
-            out.println("           <tr>");
-            out.println("               <td colspan=\"1\" style=\"\">");
-            out.println("                   <p style=\"margin:0;padding:0;font-size: 22px;color: #00ADEE;background: none repeat scroll 0% 0% #E7E7E8;\">Course Title</h1>");
-            out.println("               </td>");
-            out.println("               <td colspan=\"1\" style=\"\">");
-            out.println("                   <p style=\"margin:0;padding:0;font-size: 22px;color: #00ADEE;background: none repeat scroll 0% 0% #E7E7E8;\">Date</h1>");
-            out.println("               </td>");
-            out.println("               <td colspan=\"1\" style=\"\">");
-            out.println("                   <p style=\"margin:0;padding:0;font-size: 22px;color: #00ADEE;background: none repeat scroll 0% 0% #E7E7E8;\">Enrollment</h1>");
-            out.println("               </td>");
-            out.println("               <td colspan=\"1\" style=\"\">");
-            out.println("                   <p style=\"margin:0;padding:0;font-size: 22px;color: #00ADEE;background: none repeat scroll 0% 0% #E7E7E8;\">Enroll</h1>");
-            out.println("               </td>");
-            out.println("           </tr>");
+            out.println("   <body>");
+            out.println("   <center>");
+            out.println("       <div id=\"Container\">");
+            out.println("           <img class=\"main_logo\" src=\"/LumenTouchProject/lumen_touch_logo.png\" alt=\"Logo\">");
+            out.println("           <div id=\"main_conatiner\">");
+            out.println("               <table style=\"width:95%;\" cellpadding=\"0\" cellspacing=\"0\">");
+            out.println("                   <tr>");
+            out.println("                       <td colspan=\"1\" style=\"\">");
+            out.println("                           <p style=\"margin:0;padding:0;font-size: 22px;color: #00ADEE;background: none repeat scroll 0% 0% #E7E7E8;\">Course Title</h1>");
+            out.println("                       </td>");
+            out.println("                       <td colspan=\"1\" style=\"\">");
+            out.println("                           <p style=\"margin:0;padding:0;font-size: 22px;color: #00ADEE;background: none repeat scroll 0% 0% #E7E7E8;\">Date</h1>");
+            out.println("                       </td>");
+            out.println("                       <td colspan=\"1\" style=\"\">");
+            out.println("                           <p style=\"margin:0;padding:0;font-size: 22px;color: #00ADEE;background: none repeat scroll 0% 0% #E7E7E8;\">Enrollment</h1>");
+            out.println("                       </td>");
+            out.println("                       <td colspan=\"1\" style=\"\">");
+            out.println("                           <p style=\"margin:0;padding:0;font-size: 22px;color: #00ADEE;background: none repeat scroll 0% 0% #E7E7E8;\">Enroll</h1>");
+            out.println("                       </td>");
+            out.println("                   </tr>");
             Calendar date = Calendar.getInstance();
             int day = date.get(Calendar.DATE);
             int month = date.get(Calendar.MONTH)+1;
@@ -103,34 +103,36 @@ public class CourseIndex extends HttpServlet {
                     enrollable = true;
                 
                 if(show) {
-                    out.println("<tr>");
-                    out.println("   <td id=\"test\" style=\"width:500px;\">");
-                    out.println("<p style=\"margin-left:5px;\">");
-                    out.println(        cs.title);
-                    out.println("</p>");
-                    out.println("   </td>");
-                    out.println("   <td style=\"width:200px;\">");
-                    out.println(        cs.date);
-                    out.println("   </td>");
-                    out.println("   <td style=\"width:200px;\">");
-                    out.println(        cs.enrolled + "/" + cs.maximum);
-                    out.println("   </td>");
-                    out.println("   <td style=\"width:200px;\">");
+                    out.println("           <tr>");
+                    out.println("               <td id=\"test\" style=\"width:500px;\">");
+                    out.println("                   <p style=\"margin-left:5px;\">");
+                    out.println(                        cs.title);
+                    out.println("                   </p>");
+                    out.println("               </td>");
+                    out.println("               <td style=\"width:200px;\">");
+                    out.println(                    cs.date);
+                    out.println("               </td>");
+                    out.println("               <td style=\"width:200px;\">");
+                    out.println(                    cs.enrolled + "/" + cs.maximum);
+                    out.println("               </td>");
+                    out.println("               <td style=\"width:200px;\">");
                     if(enrollable)  {
-                        out.println("<form name=\"input\" action=\"/LumenTouchProject/CourseDescription\" method=\"post\" style=\"margin-top:15px\">");
-                        out.println("   <input type=\"hidden\" name=\"CourseID\" value=\"" + cs.id + "\">");
-                        out.println("   <input type=\"submit\" value=\"Enroll\">");
-                        out.println("</form>");
+                        out.println("               <form name=\"input\" action=\"/LumenTouchProject/CourseDescription\" method=\"post\" style=\"margin-top:15px\">");
+                        out.println("                   <input type=\"hidden\" name=\"CourseID\" value=\"" + cs.id + "\">");
+                        out.println("                   <input type=\"submit\" value=\"Enroll\">");
+                        out.println("               </form>");
                     }
-                    out.println("</td>");
-                    out.println("</tr>");
+                    out.println("               </td>");
+                    out.println("           </tr>");
                 }
             }
 
-            out.println("</table>");
-            //out.println("<img id=\"footer_img\" src=\"/LumenTouchProject/powered_by_lumen_touch.png\">");
-            out.println("</center>");
-            out.println("</body>");
+            out.println("               </table>");
+            out.println("           </div>");
+            out.println("           <img id=\"footer_img\" src=\"/LumenTouchProject/powered_by_lumen_touch.png\">");
+            out.println("           </div>");
+            out.println("       </center>");
+            out.println("   </body>");
             out.println("</html>");
         }
     }
