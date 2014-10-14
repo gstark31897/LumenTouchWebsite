@@ -129,6 +129,7 @@ public class CourseIndex extends HttpServlet {
 
             out.println("               </table>");
             out.println("           </div>");
+            out.println("           <br>");
             out.println("           <img id=\"footer_img\" src=\"/LumenTouchProject/powered_by_lumen_touch.png\">");
             out.println("           </div>");
             out.println("       </center>");
