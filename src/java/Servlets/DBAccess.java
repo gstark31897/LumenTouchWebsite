@@ -2,8 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Servlets;
+package DBUtil;
 
+import DataStructures.Course;
+import Servlets.User;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -15,7 +17,7 @@ import java.util.ArrayList;
  * @author Ncaps12
  */
 public class DBAccess {
-    static String host = "jdbc:derby://localhost:1527/LU/";
+    pustatic String host = "jdbc:derby://localhost:1527/LU/";
     static String userName = "lu";
     static String password = "lu";
     

@@ -6,6 +6,8 @@
 
 package Servlets;
 
+import DBUtil.DBAccess;
+import DataStructures.Course;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -50,7 +52,7 @@ public class CourseDescription extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("   <head>");
-            out.println("       <title>TODO supply a title</title>");
+            out.println("       <title>Course Description</title>");
             out.println("           <meta charset=\"UTF-8\">");
             out.println("           <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">");
             out.println("           <link rel=\"stylesheet\" type=\"text/css\" href=\"Blue.css\">");
