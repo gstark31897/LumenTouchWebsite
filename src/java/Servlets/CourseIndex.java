@@ -6,6 +6,7 @@
 
 package Servlets;
 
+import DBUtil.DBAccess;
 import DataStructures.Course;
 import java.io.IOException;
 import java.io.PrintWriter;

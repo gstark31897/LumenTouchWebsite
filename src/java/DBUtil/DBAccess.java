@@ -5,7 +5,8 @@
 package DBUtil;
 
 import DataStructures.Course;
-import Servlets.User;
+import DataStructures.User;
+import DataStructures.User;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
  * @author Ncaps12
  */
 public class DBAccess {
-    pustatic String host = "jdbc:derby://localhost:1527/LU/";
+    static String host = "jdbc:derby://localhost:1527/LU/";
     static String userName = "lu";
     static String password = "lu";
     
@@ -33,13 +34,13 @@ public class DBAccess {
         }
     }
     
-    static void addUser(String first_name, String last_name, String organization, String phone_number, String email_address, int course_enrolled) throws SQLException {
+    public static void addUser(String first_name, String last_name, String organization, String phone_number, String email_address, int course_enrolled) throws SQLException {
         String SQL = "insert into APP.USERS (FIRST_NAME, LAST_NAME, ORGANIZATION, PHONE_NUMBER, EMAIL_ADDRESS, COURSE_ENROLLED) values ('" + first_name + "', '" + last_name + "', '" + organization + "', '" + phone_number + "', '" + email_address + "', " + course_enrolled + ")";
         Statement stmt = dataBase.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
         stmt.execute(SQL);
     }
     
-    static ArrayList<Course> getCourses() throws SQLException {
+    public static ArrayList<Course> getCourses() throws SQLException {
         Statement stmt = dataBase.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
         String SQL = "select * from APP.COURSES";
         ResultSet rs = stmt.executeQuery(SQL);
@@ -55,7 +56,7 @@ public class DBAccess {
         
     }
     
-    static void enrollInCourse(int c) throws SQLException {
+    public static void enrollInCourse(int c) throws SQLException {
         int i = getEnrollment(c) + 1; 
         String SQL = "UPDATE APP.COURSES set ENROLLED = " + i + " where ID = " + c;
         Statement stmt = dataBase.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
@@ -73,7 +74,7 @@ public class DBAccess {
         return i;
     }
     
-    static Course getClass(int c) throws SQLException {
+    public static Course getClass(int c) throws SQLException {
         Statement stmt = dataBase.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
         String SQL = "select * from APP.COURSES where ID = " + c;
         ResultSet rs = stmt.executeQuery(SQL);
@@ -84,7 +85,7 @@ public class DBAccess {
         return new Course(rs.getInt("ID"), rs.getString("TITLE"), rs.getString("LOCATION"), rs.getString("DATE"), rs.getInt("ENROLLED"), rs.getInt("MAXIMUM"), rs.getString("TEACHER"), rs.getString("DESCRIPTION"));
     }
     
-    static User getUser(String email) throws SQLException {
+    public static User getUser(String email) throws SQLException {
         Statement stmt = dataBase.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
         String SQL = "select * from APP.USERS where EMAIL_ADDRESS = '" + email + "'";
         ResultSet rs = stmt.executeQuery(SQL);

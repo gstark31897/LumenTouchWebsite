@@ -9,14 +9,14 @@ package DataStructures;
  * @author Ncaps12
  */
 public class Course {
-    int id;
-    String title;
-    String location;
-    String date;
-    int enrolled;
-    int maximum;
-    String teacher;
-    String description;
+    public int id;
+    public String title;
+    public String location;
+    public String date;
+    public int enrolled;
+    public int maximum;
+    public String teacher;
+    public String description;
     
     public Course(int id, String course_title, String course_location, String course_date, int enrolled, int maximum, String teacher, String course_description) {
         this.id = id;
