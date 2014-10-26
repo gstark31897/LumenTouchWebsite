@@ -35,21 +35,28 @@ public class DBAccess {
     }
     
     public static void addUser(String first_name, String last_name, String organization, String phone_number, String email_address, int course_enrolled) throws SQLException {
-        String SQL = "insert into APP.USERS (FIRST_NAME, LAST_NAME, ORGANIZATION, PHONE_NUMBER, EMAIL_ADDRESS, COURSE_ENROLLED) values ('" + first_name + "', '" + last_name + "', '" + organization + "', '" + phone_number + "', '" + email_address + "', " + course_enrolled + ")";
+        String SQL = "insert into LU.USERS (FIRST_NAME, LAST_NAME, ORGANIZATION, PHONE_NUMBER, EMAIL_ADDRESS, COURSE_ENROLLED) values ('" + first_name + "', '" + last_name + "', '" + organization + "', '" + phone_number + "', '" + email_address + "', " + course_enrolled + ")";
         Statement stmt = dataBase.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
         stmt.execute(SQL);
     }
     
     public static ArrayList<Course> getCourses() throws SQLException {
         Statement stmt = dataBase.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
-        String SQL = "select * from APP.COURSES";
+        String SQL = "select * from LU.COURSES";
         ResultSet rs = stmt.executeQuery(SQL);
         
         ArrayList<Course> courses = new ArrayList<Course>();
         System.out.println(rs.isLast());
         while(!rs.isLast()) {
             rs.next();
-            courses.add(new Course(rs.getInt("ID"), rs.getString("TITLE"), rs.getString("LOCATION"), rs.getString("DATE"), rs.getInt("ENROLLED"), rs.getInt("MAXIMUM"), rs.getString("TEACHER"), rs.getString("DESCRIPTION")));
+            courses.add(new Course(rs.getInt("ID"), 
+                                   rs.getString("TITLE"), 
+                                   rs.getString("LOCATION"), 
+                                   rs.getString("DATE"), 
+                                   rs.getInt("ENROLLED"), 
+                                   rs.getInt("MAXIMUM"), 
+                                   rs.getString("TEACHER"), 
+                                   rs.getString("DESCRIPTION")));
         }
         
         return courses;
@@ -58,14 +65,14 @@ public class DBAccess {
     
     public static void enrollInCourse(int c) throws SQLException {
         int i = getEnrollment(c) + 1; 
-        String SQL = "UPDATE APP.COURSES set ENROLLED = " + i + " where ID = " + c;
+        String SQL = "UPDATE LU.COURSES set ENROLLED = " + i + " where ID = " + c;
         Statement stmt = dataBase.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
         stmt.execute(SQL);
     }
     
     static int getEnrollment(int c) throws SQLException {
         Statement stmt = dataBase.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
-        String SQL = "select * from APP.COURSES where ID = " + c;
+        String SQL = "select * from LU.COURSES where ID = " + c;
         ResultSet rs = stmt.executeQuery(SQL);
         
         rs.next();
@@ -76,7 +83,7 @@ public class DBAccess {
     
     public static Course getClass(int c) throws SQLException {
         Statement stmt = dataBase.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
-        String SQL = "select * from APP.COURSES where ID = " + c;
+        String SQL = "select * from LU.COURSES where ID = " + c;
         ResultSet rs = stmt.executeQuery(SQL);
         
         ArrayList<Course> courses = new ArrayList<Course>();
@@ -87,7 +94,7 @@ public class DBAccess {
     
     public static User getUser(String email) throws SQLException {
         Statement stmt = dataBase.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
-        String SQL = "select * from APP.USERS where EMAIL_ADDRESS = '" + email + "'";
+        String SQL = "select * from LU.USERS where EMAIL_ADDRESS = '" + email + "'";
         ResultSet rs = stmt.executeQuery(SQL);
         rs.next();
         return new User(rs.getString("FIRST_NAME"), rs.getString("LAST_NAME"), rs.getString("ORGANIZATION"), rs.getString("PHONE_NUMBER"), rs.getString("EMAIL_ADDRESS"), rs.getInt("ENROLLED"));
