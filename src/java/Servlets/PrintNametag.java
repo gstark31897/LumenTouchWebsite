@@ -44,7 +44,7 @@ public class PrintNametag extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Please have this nametag printed:<br>" + request.getParameter("firstname") + " " + request.getParameter("lastname") + "<br>" + request.getParameter("organization")+ "<br>" + request.getParameter("phonenumber") + "</h1>");
-            out.println("<form name=\"input\" action=\"/LumenTouchProject/LoginUser\" method=\"post\">");
+            out.println("<form name=\"input\" action=\"/LumenTouchWebsite/LoginUser\" method=\"post\">");
             out.println("<input type=\"hidden\" name=\"ClassID\" value=\"" + c + "\">");
             out.println("<button type=\"submit\">Continue</button>");
             out.println("</form>");

@@ -49,10 +49,10 @@ public class UserCredentials extends HttpServlet {
             out.println("   <body>");
             out.println("       <center>");
             out.println("           <div id=\"Container\">");
-            out.println("               <img class=\"main_logo\" src=\"/LumenTouchProject/lumen_touch_logo.png\" alt=\"Logo\">");
+            out.println("               <img class=\"main_logo\" src=\"/LumenTouchWebsite/lumen_touch_logo.png\" alt=\"Logo\">");
             out.println("               <div id=\"main_conatiner\" style=\"padding: 5% 5% 5% 15%\">");
             out.println("                   <div style=\"text-align: left;\">");
-            out.println("                       <form name=\"input\" action=\"/LumenTouchProject/EnrollUser\" method=\"post\">");
+            out.println("                       <form name=\"input\" action=\"/LumenTouchWebsite/EnrollUser\" method=\"post\">");
             out.println("                           <input type=\"hidden\" name=\"CourseID\" value=\"" + c + "\">");     
             out.println("                           First name: <input type=\"text\" name=\"firstname\"><br>");
             out.println("                           Last name: <input type=\"text\" name=\"lastname\"><br>");
@@ -61,13 +61,13 @@ public class UserCredentials extends HttpServlet {
             out.println("                           Email: <input type=\"text\" name=\"email\"><br><br>");
             out.println("                           <input type=\"submit\" value=\"Enroll\">");
             out.println("                       </form>");
-            out.println("                       <form name=\"input\" action=\"/LumenTouchProject/CourseIndex\" method=\"post\">");
+            out.println("                       <form name=\"input\" action=\"/LumenTouchWebsite/CourseIndex\" method=\"post\">");
             out.println("                           <input type=\"submit\" value=\"Back\">");
             out.println("                       </form>");
             out.println("                   </div>");
             out.println("               </div>");
             out.println("               <br>");
-            out.println("               <img id=\"footer_img\" src=\"/LumenTouchProject/powered_by_lumen_touch.png\">");
+            out.println("               <img id=\"footer_img\" src=\"/LumenTouchWebsite/powered_by_lumen_touch.png\">");
             out.println("           </div>");
             out.println("       </center>");
             out.println("   </body>");

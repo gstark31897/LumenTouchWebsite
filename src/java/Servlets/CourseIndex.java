@@ -59,7 +59,7 @@ public class CourseIndex extends HttpServlet {
             out.println("   <body>");
             out.println("   <center>");
             out.println("       <div id=\"Container\">");
-            out.println("           <img class=\"main_logo\" src=\"/LumenTouchProject/lumen_touch_logo.png\" alt=\"Logo\">");
+            out.println("           <img class=\"main_logo\" src=\"/LumenTouchWebsite/lumen_touch_logo.png\" alt=\"Logo\">");
             out.println("           <div id=\"main_conatiner\">");
             out.println("               <table style=\"width:95%;\" cellpadding=\"0\" cellspacing=\"0\">");
             out.println("                   <tr>");
@@ -119,7 +119,7 @@ public class CourseIndex extends HttpServlet {
                     out.println("               </td>");
                     out.println("               <td style=\"width:200px;\">");
                     if(enrollable)  {
-                        out.println("               <form name=\"input\" action=\"/LumenTouchProject/CourseDescription\" method=\"post\" style=\"margin-top:15px\">");
+                        out.println("               <form name=\"input\" action=\"/LumenTouchWebsite/CourseDescription\" method=\"post\" style=\"margin-top:15px\">");
                         out.println("                   <input type=\"hidden\" name=\"CourseID\" value=\"" + cs.id + "\">");
                         out.println("                   <input type=\"submit\" value=\"Enroll\">");
                         out.println("               </form>");
@@ -132,7 +132,7 @@ public class CourseIndex extends HttpServlet {
             out.println("               </table>");
             out.println("           </div>");
             out.println("           <br>");
-            out.println("           <img id=\"footer_img\" src=\"/LumenTouchProject/powered_by_lumen_touch.png\">");
+            out.println("           <img id=\"footer_img\" src=\"/LumenTouchWebsite/powered_by_lumen_touch.png\">");
             out.println("           </div>");
             out.println("       </center>");
             out.println("   </body>");

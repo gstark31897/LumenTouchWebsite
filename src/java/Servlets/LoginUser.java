@@ -63,7 +63,7 @@ public class LoginUser extends HttpServlet {
             out.println("           <div id=\"main_conatiner\" style=\"padding: 5% 5% 5% 15%\">");
             out.println("               <div style=\"text-align: left;\">");
             out.println("                   <p>Sign in for " + cs.title + "</p>");
-            out.println("                   <form method=\"get\" action=\"/LumenTouchProject/VerifyUser\"> ");
+            out.println("                   <form method=\"get\" action=\"/LumenTouchWebsite/VerifyUser\"> ");
             out.println("                       <input type=\"hidden\" name=\"ClassID\" value=\"" + cs.id + "\">");
             out.println("                       Email: <input type=\"text\" name=\"email\" ><br>");
             out.println("                       <button type=\"submit\">Submit</button>");

@@ -90,7 +90,7 @@ public class CourseLoginSelector extends HttpServlet {
                 out.println(                        cs.enrolled + "/" + cs.maximum + "");
                 out.println("                   </td>");
                 out.println("                   <td style=\"width:200px;vertical-align:top;\">");
-                out.println("                       <form name=\"input\" action=\"/LumenTouchProject/LoginUser\" method=\"post\">");
+                out.println("                       <form name=\"input\" action=\"/LumenTouchWebsite/LoginUser\" method=\"post\">");
                 out.println("                           <input type=\"hidden\" name=\"ClassID\" value=\"" + cs.id + "\">");
                 out.println("                           <input type=\"submit\" value=\"Select\">");
                 out.println("                       </form>");

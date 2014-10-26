@@ -44,7 +44,7 @@ public class EnrollUser extends HttpServlet {
             Logger.getLogger(EnrollUser.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        response.sendRedirect("/LumenTouchProject/CourseIndex");
+        response.sendRedirect("/LumenTouchWebsite/CourseIndex");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

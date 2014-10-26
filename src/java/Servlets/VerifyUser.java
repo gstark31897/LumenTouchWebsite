@@ -65,7 +65,7 @@ public class VerifyUser extends HttpServlet {
             out.println("               <img class=\"main_logo\" src=\"lumen_touch_logo.png\" alt=\"Logo\">\n");
             out.println("           <div id=\"main_conatiner\" style=\"padding: 5% 5% 5% 15%\">\n");
             out.println("               <p>Please verify this information:</p>");
-            out.println("        	<form name=\"input\" action=\"/LumenTouchProject/PrintNametag\" method=\"post\">\n");
+            out.println("        	<form name=\"input\" action=\"/LumenTouchWebsite/PrintNametag\" method=\"post\">\n");
             out.println("                   <div style=\"text-align: left;\">\n");
             out.println("                       <input type=\"hidden\" name=\"ClassID\" value=\"" + c + "\">\n");
             out.println("                           First Name: <input type=\"text\" name=\"firstname\" value=\"" + u.first_name + "\" ><br>\n");
