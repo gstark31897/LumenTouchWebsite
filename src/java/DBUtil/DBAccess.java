@@ -97,6 +97,6 @@ public class DBAccess {
         String SQL = "select * from LU.USERS where EMAIL_ADDRESS = '" + email + "'";
         ResultSet rs = stmt.executeQuery(SQL);
         rs.next();
-        return new User(rs.getString("FIRST_NAME"), rs.getString("LAST_NAME"), rs.getString("ORGANIZATION"), rs.getString("PHONE_NUMBER"), rs.getString("EMAIL_ADDRESS"), rs.getInt("ENROLLED"));
+        return new User(rs.getString("FIRST_NAME"), rs.getString("LAST_NAME"), rs.getString("ORGANIZATION"), rs.getString("PHONE_NUMBER"), rs.getString("EMAIL_ADDRESS"), rs.getInt("COURSE_ENROLLED"));
     }
 }

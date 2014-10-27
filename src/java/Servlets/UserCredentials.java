@@ -54,11 +54,11 @@ public class UserCredentials extends HttpServlet {
             out.println("                   <div style=\"text-align: left;\">");
             out.println("                       <form name=\"input\" action=\"/LumenTouchWebsite/EnrollUser\" method=\"post\">");
             out.println("                           <input type=\"hidden\" name=\"CourseID\" value=\"" + c + "\">");     
-            out.println("                           First name: <input type=\"text\" name=\"firstname\"><br>");
-            out.println("                           Last name: <input type=\"text\" name=\"lastname\"><br>");
-            out.println("                           Organization: <input type=\"text\" name=\"organization\"><br>");
-            out.println("                           Phone number: <input type=\"text\" name=\"phone\" value=\"123-456-7890\"><br>");
-            out.println("                           Email: <input type=\"text\" name=\"email\"><br><br>");
+            out.println("                           First name: <input type=\"text\" name=\"firstname\" required><br>");
+            out.println("                           Last name: <input type=\"text\" name=\"lastname\" required><br>");
+            out.println("                           Organization: <input type=\"text\" name=\"organization\" required><br>");
+            out.println("                           Phone number: <input type=\"text\" name=\"phone\" value=\"123-456-7890\" required><br>");
+            out.println("                           Email: <input type=\"text\" name=\"email\" required><br><br>");
             out.println("                           <input type=\"submit\" value=\"Enroll\">");
             out.println("                       </form>");
             out.println("                       <form name=\"input\" action=\"/LumenTouchWebsite/CourseIndex\" method=\"post\">");
